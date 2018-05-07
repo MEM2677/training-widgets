@@ -1,0 +1,7 @@
+<project name="training-widgets" default="WAR-build" basedir=".">
+	<description>training-widgets - Build file</description>
+
+	<import file="buildProperties.xml"/>
+	<import file="buildTasks.xml"/>
+
+</project>

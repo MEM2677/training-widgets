@@ -1,0 +1,24 @@
+<apiMethodDefinitions>
+
+
+    <resource name="number">
+        <description>The random</description>
+        <source>widget</source>
+        <method httpMethod="GET" active="true" canSpawnOthers="true">
+            <description>Return a random by id</description>
+            <springBean name="widgetsRandomManager" method="getRandomForApi" />
+            <responseClass>org.entando.training.widgets.aps.system.services.random.api.RandomResponse</responseClass>
+<!--            <parameters>
+                <parameter key="id" required="true">
+                    <description>The id of the random to return</description>
+                </parameter>
+            </parameters>-->
+        </method>
+<!--        <method httpMethod="POST" active="true" requiredAuth="true" requiredPermission="superuser">
+            <description>Add a random</description>
+            <springBean name="leonardoRandomManager" method="addRandomForApi" />
+            <expectedType>au.leonardo.aps.system.services.random.api.JAXBRandom</expectedType>
+        </method>-->
+    </resource>
+
+</apiMethodDefinitions>
