@@ -2019,3 +2019,14 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 </pre>',1);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('react','react',NULL,'<div id="entando-react"></div>
 <script type="text/javascript" src="/training-widgets/resources/static/js/react-widget.js"></script>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('angular','angular',NULL,'<div ng-app="myApp" ng-controller="NumberController" class="jumbotron">
+  <h3>Angular Number Widget</h3>
+  <p>
+    Here is a random number:&nbsp;<kbd>{{number}}</kbd>
+  </p>
+  <p>
+    <button class="btn btn-primary btn-large" ng-click="fetchNewNumber()">Get Another Number</button>
+  </p>
+</div>
+<script type="text/javascript" src="/training-widgets/resources/static/js/angular.min.js"></script>
+<script type="text/javascript" src="/training-widgets/resources/static/js/angular-widget.js"></script>',NULL,0);

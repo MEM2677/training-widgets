@@ -1,0 +1,8 @@
+1) Copy angular-widget.js, angular.min.js, angular.min.js.map  in ./training-widgets/src/main/webapp/resources/static/js
+
+2) Go inside the "UX Patterns" -> "Widget" section of the admin console and create a new widget with the given parameters:
+code: angular
+title en: Random Number Angular Widget
+title it:Widget Angular per Numero casuale
+group: free access
+Custom UI: copy and paste the code found in the angular-widget.html file.

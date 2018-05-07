@@ -8,3 +8,4 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',15,'random-number-jstl',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',16,'random-number-ognl',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',17,'react',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',18,'angular',NULL);

@@ -139,3 +139,6 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('react','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="en">Random Number REACT Widget</property><property key="it">Widget REACT per Numero casuale</property></properties>
 ',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('angular','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">Random Number Angular Widget</property><property key="it">Angular per Numero casuale</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
