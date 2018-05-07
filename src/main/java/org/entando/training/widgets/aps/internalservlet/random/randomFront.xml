@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="training_do/FrontEnd/training/Random" namespace="/do/FrontEnd/training/Random" extends="entando-front-default">
+
+		<global-results>
+			<result name="failure" type="guiFragment">
+				<param name="code">random_number_ognl_error</param>
+				<param name="jspLocation">/WEB-INF/training/aps/jsp/internalservlet/random/random-number-ognl.jsp</param>
+			</result>
+    	</global-results>
+
+
+        <action name="view" class="trainingRandomFrontEndAction" method="view">
+            <result type="guiFragment">
+				<param name="code">random_number_ognl</param>
+				<param name="jspLocation">/WEB-INF/training/aps/jsp/internalservlet/random/random-number-ognl.jsp</param>
+			</result>
+			<interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+
+    </package>
+
+</struts>

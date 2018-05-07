@@ -1,0 +1,35 @@
+1) copy the file ./training-widgets/src/main/webapp/WEB-INF/training/aps/jsp/internalservlet/random/random-number-ognl.jsp
+2) From the administration area settings --> Database --> Create a backup
+3) open the file ./training-widgets/src/main/webapp/protected/databaseBackups/develop/portDataSource/widgetcatalog.sql
+4) append the following statement at the end of the file
+
+
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('random-number-ognl', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Random Number OGNL Widget</property>
+<property key="it">Widget OGNL per Numero casuale</property>
+</properties>', NULL,  NULL , 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="actionPath">/ExtStr2/do/FrontEnd/training/Random/view.action</property>
+</properties>', 1, 'free');
+
+6) copy the file ./training-widgets/src/main/resources/spring/training/apsadmin/randomActionsConfig.xml
+7) copy the file ./training-widgets/src/main/resources/entando-struts-plugin.xml
+8) copy the file ./training-widgets/src/main/java/org/entando/training/widgets/aps/internalservlet/random/RandomFrontEndAction.java
+9) copy the file ./training-widgets/src/main/java/org/entando/training/widgets/aps/internalservlet/random/randomFront.xml
+
+10) back in the administration area, settings --> Database click on the column "Date" relative to the previous backup
+11) restore the backup clicking twice (the second for confirmation) on the button Restore Backup
+12) Settings --> Reload Configuration click on Reload
+13) UX Pattern --> Widgets make sure the the widget "Random Number OGNL Widget" appears in the list of Custom widgets
+
+-- make it dynamic
+
+14) open the file ./training-widgets/src/main/webapp/WEB-INF/training/aps/jsp/internalservlet/random/random-number-ognl.jsp
+15) copy the following line in the top of the file
+
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+16) copy the following line in the bottom
+
+<s:property value="number.output" />

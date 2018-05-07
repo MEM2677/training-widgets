@@ -129,7 +129,7 @@ INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','subIndex
 INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','entandoComponentsReport','The component installation report','<?xml version="1.0" encoding="UTF-8"?>
 <reports status="INCOMPLETE">
 	<creation>2018-05-07 08:00:38</creation>
-	<lastupdate>2018-05-07 08:18:40</lastupdate>
+	<lastupdate>2018-05-07 08:51:00</lastupdate>
 	<components>
 		<component code="entandoCore" date="2018-05-07 08:00:38" status="OK">
 			<schema status="OK">
