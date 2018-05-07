@@ -133,3 +133,6 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 <properties>
 <property key="actionPath">/ExtStr2/do/FrontEnd/training/Random/view.action</property>
 </properties>',1,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('simpleforecast','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">Weather forecast</property><property key="it">Previsioni del tempo</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');

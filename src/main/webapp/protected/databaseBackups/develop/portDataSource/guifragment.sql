@@ -1991,3 +1991,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <form class="navbar-search pull-left" action="<#if (searchResultPageVar??) ><@wp.url page="${searchResultPageVar.code}" /></#if>" method="get">
 <input type="text" name="search" class="search-query span2" placeholder="<@wp.i18n key="ESSF_SEARCH" />" x-webkit-speech="x-webkit-speech" />
 </form>',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('simpleforecast','simpleforecast',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<#if (Session.currentUser.username != "guest") >
+<p><@wp.i18n key="WELCOME" />, <em>${Session.currentUser}</em>!</p>
+</#if>
+<a href="https://www.accuweather.com/en/it/rome/213490/weather-forecast/213490" class="aw-widget-legal">
+</a>
+<div id="awcc1514712565101" class="aw-widget-current"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" data-uid="awcc1514712565101"></div>
+<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>',NULL,0);

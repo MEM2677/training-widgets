@@ -4,5 +4,6 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage
 ');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',2,'entando-widget-search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',3,'entando-widget-login_form',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',7,'simpleforecast',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',15,'random-number-jstl',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage',16,'random-number-ognl',NULL);

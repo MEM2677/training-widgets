@@ -1,0 +1,27 @@
+1) login to the administration area
+2) from UX Patterns --> Widgets click on Add
+3) enter the following values
+
+code -> simpleforecast
+en Title -> Weather forecast
+it Title -> Previsioni del tempo
+Group -> select Free Access
+Custom UI ->
+
+<a href="https://www.accuweather.com/en/it/rome/213490/weather-forecast/213490" class="aw-widget-legal">
+</a>
+<div id="awcc1514712565101" class="aw-widget-current"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" data-uid="awcc1514712565101"></div>
+<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+
+4) deploy in a page of choice, test it!
+
+---Make it dynamic!
+
+5) in the administration Area edit the widget just created
+6) add the following lines in the top of the GUI Code
+
+<#assign wp=JspTaglibs["/aps-core"]>
+<#if (Session.currentUser.username != "guest") >
+<p><@wp.i18n key="WELCOME" />, <em>${Session.currentUser}</em>!</p>
+</#if>
+
