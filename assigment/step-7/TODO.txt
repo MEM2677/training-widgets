@@ -1,0 +1,52 @@
+1) copy the classes
+   ./training-widgets/src/main/java/org/entando/training/widgets/aps/system/servlet/random/RandManagerBeanContainer.java
+   ./training-widgets/src/main/java/org/entando/training/widgets/aps/system/services/random/RandomManager.java 
+   ./training-widgets/src/main/java/org/entando/training/widgets/aps/system/servlet/random/RandomWebsocketManager.java
+
+2) modify pom.xml
+
+    <!-- websocket support // start -->
+    <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-websocket</artifactId>
+        <version>8.1.16.v20140903</version>
+    </dependency>
+
+    <!-- simple JSON library -->
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20131018</version><!-- feel free to choose a newer version -->
+    </dependency>
+
+3) modify web.xml
+
+    <!-- WebSocket start JETTY // start -->
+    <servlet>
+            <servlet-name>WebSocket</servlet-name>
+            <servlet-class>org.entando.training.widgets.aps.system.servlet.random.RandomWebsocketManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+            <servlet-name>WebSocket</servlet-name>
+            <url-pattern>/wstest/*</url-pattern>
+    </servlet-mapping>
+    <!-- WebSocket start JETTY // end -->
+
+4) open the file ./training-widgets/src/main/webapp/protected/databaseBackups/develop/portDataSource/widgetcatalog.sql
+5) append the following statement at the end of the file
+
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('random-number-websocket', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Random Number WEBSOCKET Widget</property>
+<property key="it">Widget WEBSOCKET per Numero casuale</property>
+</properties>', NULL, NULL , NULL, NULL, 1, 'free');
+	
+6) copy the widget-websoket.js into ./training-widgets/src/main/webapp/resources/static/js/ws
+7) copy the jsp ./training-widgets/src/main/webapp/WEB-INF/aps/jsp/widgets/random-number-websocket.jsp
+
+
+Testing websocket
+
+1) connect to ws://localhost:8080/training-widgets/wstest
+
+

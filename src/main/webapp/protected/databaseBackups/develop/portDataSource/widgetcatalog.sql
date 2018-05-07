@@ -142,3 +142,8 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('angular','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="en">Random Number Angular Widget</property><property key="it">Angular per Numero casuale</property></properties>
 ',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('random-number-websocket','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Random Number WEBSOCKET Widget</property>
+<property key="it">Widget WEBSOCKET per Numero casuale</property>
+</properties>',NULL,NULL,NULL,NULL,1,'free');
