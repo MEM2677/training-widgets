@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+  <description><![CDATA["training_random core tag library"]]></description>
+  <display-name>"training_random core tag library"</display-name>
+  <tlib-version>2.2</tlib-version>
+  <short-name>training_random</short-name>
+  <uri>/training_random-core</uri>
+
+	<tag>
+		<description>Loads and returns an Random Number</description>
+		<name>random</name>
+		<tag-class>org.entando.training.widgets.aps.tags.RandomTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>The name of the variable set in the pagecontext.</description>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+</taglib>
