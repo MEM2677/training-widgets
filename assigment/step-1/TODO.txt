@@ -1,0 +1,34 @@
+0) create ./training-widgets/src/main/webapp/WEB-INF/aps/jsp/widgets/random-number-jstl.jsp
+1) From the administration area settings --> Database --> Create a backup
+2) open the file ./training-widgets/src/main/webapp/protected/databaseBackups/develop/portDataSource/widgetcatalog.sql
+3) append the following statement at the end of the file
+
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('random-number-jstl', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Random Number JSTL Widget</property>
+<property key="it">Widget JSTL per Numero casuale</property>
+</properties>', NULL, NULL , NULL, NULL, 1, 'free');
+
+4) back in the administration area, settings --> Database click on the column "Date" relative to the previous backup
+5) restore the backup clicking twice (the second for confirmation) on the button Restore Backup
+6) Settings --> Reload Configuration click on Reload
+7) UX Pattern --> Widgets make sure the the widget "Random Number JSTL Widget" appears in the list of Custom widgets
+8) create a page and test the Widget. You should visualize the message "Hello world"
+
+-- make it dynamic! --
+
+9) copy the file training-core.tld into ./training-widgets/src/main/tld
+10) copy the java class ./training-widgets/src/main/java/org/entando/training/widgets/aps/tags/RandomTag.java
+11) open the JSP ./training-widgets/src/main/webapp/WEB-INF/aps/jsp/widgets/random-number-jstl.jsp
+
+12) add the line below in the top of the file
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="training" uri="/training_random-core"%>
+<training:random var="random" />
+
+13) add the following in the bottom of the file
+
+Here is a random number:&nbsp;<c:out value="${random.output}" />
+
+14) restart the web app and, reload the page containing the widget: a new randomly generated number appears whenever the page is reloaded

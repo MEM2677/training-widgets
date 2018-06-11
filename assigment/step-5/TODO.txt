@@ -1,0 +1,13 @@
+
+1) In the admin console: "UX Patterns" -> "Widget"
+2) create a new widget with the given parameters:
+code: react
+title en: Random Number REACT Widget
+title it: Widget REACT per Numero casuale
+group: free access
+Custom UI: copy and paste the code found in the react-widget.html file.
+
+copy the file react-widget.html into ./training-widgets/src/main/webapp/resources/static/less
+
+3) copy ./training-widgets/src/main/webapp/resources/static/js/react-widget.js
+
