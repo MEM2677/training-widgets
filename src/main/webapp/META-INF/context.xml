@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Context path="/training-widgets" docBase="./training-widgets" debug="1" reloadable="false">
 
+    <Environment name="logActiveFileOutput" value="true" type="java.lang.String" override="false" />
     <Environment name="logName" value="training-widgets" type="java.lang.String" override="false" />
     <Environment name="logFilePrefix" value="C:\\Users\\super\\workspace\\training\\training-widgets\\target\\log_training-widgets" type="java.lang.String" override="false" />
     <Environment name="logLevel" value="INFO" type="java.lang.String" override="false" />
@@ -17,8 +18,10 @@
     <Environment name="protectedResourceDiskRootFolder" value="C:\\Users\\super\\workspace\\training\\training-widgets\\src\\main\\webapp\\protected" type="java.lang.String" override="false" />
 
     <Environment name="indexDiskRootFolder" value="C:\\Users\\super\\workspace\\training\\training-widgets\\target\\temp\\indexdir" type="java.lang.String" override="false" />
-    <Environment name="configFolder" value="C:\\Users\\super\\workspace\\training\\training-widgets\\src\\main\\config" type="java.lang.String" override="false" />
-
+    
+    <Environment name="portDataSourceClassName" value="org.apache.derby.jdbc.EmbeddedDriver" type="java.lang.String" override="false" />
+    <Environment name="servDataSourceClassName" value="org.apache.derby.jdbc.EmbeddedDriver" type="java.lang.String" override="false" />
+	
     <Resource name="jdbc/portDataSource" auth="Container"
               type="javax.sql.DataSource" driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
               maxActive="8" maxIdle="4"
