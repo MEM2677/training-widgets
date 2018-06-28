@@ -1,3 +1,4 @@
+
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage',0,'entando-widget-language_choose',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage',1,'entando-widget-navigation_bar','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="navSpec">code(homepage)</property></properties>

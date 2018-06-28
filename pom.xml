@@ -8,6 +8,16 @@
     <version>1.0-SNAPSHOT</version>
     <name>training-widgets</name>
     <url>http://maven.apache.org/</url>
+    <repositories>
+        <repository>
+            <id>snapshot-repository</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
     <profiles>
         <profile>
             <id>production</id>
@@ -114,10 +124,10 @@
 
         <skipDerby>true</skipDerby>
         <skipStandalone>true</skipStandalone>
-        <entando.version>4.3.2</entando.version>
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <entando.version>5.0.0</entando.version>
+        <spring.version>5.0.5.RELEASE</spring.version>
         <struts2.version>2.5.10.1</struts2.version>
-        <cxf.version>2.7.14</cxf.version>
+        <cxf.version>3.0.4</cxf.version>
     </properties>
     <build>
         <finalName>training-widgets</finalName>
@@ -173,8 +183,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <target>1.7</target>
-                    <source>1.7</source>
+                    <target>1.8</target>
+                    <source>1.8</source>
                 </configuration>
             </plugin>
             <plugin>
@@ -408,7 +418,6 @@
                             </resources>
                         </configuration>
                     </execution>
-
                     <execution>
                         <id>copy-resources-jettycontextxml</id>
                         <phase>validate</phase>
@@ -423,6 +432,7 @@
                                     <directory>src/main/config</directory>
                                     <includes>
                                         <include>jetty-env.xml</include>
+                                        <include>jetty.xml</include>
                                     </includes>
                                     <filtering>true</filtering>
                                 </resource>
@@ -558,10 +568,11 @@
             </plugin>
             <!-- mvn jetty:run (with hot-redeploy) -->
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>7.6.16.v20140903</version>
+                <version>9.2.11.v20150529</version>
                 <configuration>
+                    <jettyXml>${project.build.directory}/jetty/jetty.xml</jettyXml>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
                     <webApp>
@@ -856,8 +867,8 @@
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -891,25 +902,38 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>test</scope>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpinfinispan</artifactId>
+            <version>${entando.version}</version>
+            <type>war</type>
         </dependency>
-        
+
         <!-- websocket support // start -->
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-websocket</artifactId>
-            <version>8.1.16.v20140903</version>
-	</dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>javax-websocket-server-impl</artifactId>
+            <version>9.2.11.v20150529</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-server</artifactId>
+            <version>9.2.11.v20150529</version>
+            <scope>provided</scope>
+        </dependency>
+	<!-- websocket support // end -->
 
-	<!-- simple JSON library -->
-	<dependency>
+        <!-- simple JSON library -->
+        <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20131018</version><!-- feel free to choose a newer version -->
-	</dependency>
-        
+        </dependency>
+
     </dependencies>
 </project>
